@@ -32,7 +32,7 @@ Prefer not to log every goal? Skip `goals:` and use `final_score: {us: 3, them: 
 | Home page link cards | `_data/links.yml` |
 | Formations (positions on the pitch) | `_data/formations.yml` |
 | Team logo | put an image in `assets/img/`, set `logo: /assets/img/your-file.png` in `_config.yml` |
-| Colours and look | `assets/css/style.css` |
+| Colours and look | `assets/css/site.css` |
 
 ## Preview on your computer (optional)
 `bundle install` then `bundle exec jekyll serve`, and open http://localhost:4000 (add your `baseurl` if you set one).

@@ -18,7 +18,7 @@ permalink: /games/
   {%- endif -%}
 {%- endfor -%}
 {%- assign live = all_games | where: "status", "live" -%}
-{%- assign upcoming = all_games | where_exp: "g", "g.status != 'final' and g.status != 'live'" -%}
+{%- assign upcoming = all_games | where_exp: "g", "g.status != 'final'" | where_exp: "g", "g.status != 'live'" -%}
 {%- assign finished = all_games | where: "status", "final" | reverse -%}
 
 <h1>Games &amp; results</h1>
