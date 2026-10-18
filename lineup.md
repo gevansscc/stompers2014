@@ -1,4 +1,4 @@
-# U13 Lineup – Game 1
+# U12 Lineup – Windsor TFC
 
 formation: 3-2-3
 
@@ -17,20 +17,18 @@ HOW THIS FILE WORKS
 
 ## Lineup
 
-- GK: Player A #1 | Player J
-- LB: Player B #2 | Player K
-- CB: Player C #4
-- RB: Player D #3 | Player L | Player M
-- LCM: Player E #8
-- RCM: Player F #6 | Player N
-- LW: Player G #11
-- ST: Player H #9 | Player O
-- RW: Player I #7
+- GK: Holden E #3 | Dante | 
+- LB: Thomas #11 | Dante | 
+- CB: Marcus #20 | Devon |
+- RB: Devon #23 |Sam| Sebastian
+- LCM: Erik L #31 | Omar
+- RCM: Erik K #12 | Zidan | 
+- LW: Mohamed #7 | Anthony
+- ST: Lucas #10 | Marcus
+- RW: Austin #19 | Holden
 
 ## Bench
 
-- Player P #14
-- Player Q #15
 
 ## Formations
 
