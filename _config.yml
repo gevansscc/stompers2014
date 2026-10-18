@@ -1,0 +1,34 @@
+# ---------- Team settings (edit these) ----------
+title: U13 Soccer
+description: Lineups, results and training links
+team_name: U13 Soccer            # shown on scoreboards (your side)
+tagline: Season 2026 · Team hub
+logo: ""                         # e.g. /assets/img/team-logo.png  (blank = placeholder badge)
+
+# ---------- GitHub Pages ----------
+# Project site (https://USER.github.io/REPO/)  -> baseurl: "/REPO"
+# User/org site or custom domain               -> baseurl: ""
+baseurl: ""
+url: ""
+timezone: America/Toronto
+future: true                     # lets games dated in the future be published
+
+# ---------- Don't need to change below ----------
+markdown: kramdown
+collections:
+  games:
+    output: true
+    permalink: /games/:name/
+defaults:
+  - scope:
+      path: ""
+      type: games
+    values:
+      layout: game
+exclude:
+  - README.md
+  - _templates
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

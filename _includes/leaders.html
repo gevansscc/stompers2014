@@ -1,0 +1,36 @@
+{%- comment -%}
+  Season leaders: goals and assists per player, counted from every live/final game.
+  Only players listed in _data/roster.yml are counted.
+{%- endcomment -%}
+{%- assign lrows = "" | split: "," -%}
+{%- for p in site.data.roster -%}
+  {%- assign gn = 0 -%}
+  {%- assign an = 0 -%}
+  {%- for lg in site.games -%}
+    {%- if lg.status == "final" or lg.status == "live" -%}
+      {%- assign c1 = lg.goals | where: "scorer", p.name | size -%}
+      {%- assign c2 = lg.goals | where: "assist", p.name | size -%}
+      {%- assign gn = gn | plus: c1 -%}
+      {%- assign an = an | plus: c2 -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if gn > 0 or an > 0 -%}
+    {%- assign gk = gn | prepend: "00" | slice: -2, 2 -%}
+    {%- assign ak = an | prepend: "00" | slice: -2, 2 -%}
+    {%- assign lrow = gk | append: ak | append: "|" | append: p.name | append: "|" | append: gn | append: "|" | append: an -%}
+    {%- assign lrows = lrows | push: lrow -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign lrows = lrows | sort | reverse -%}
+{%- if lrows.size > 0 %}
+<table class="leaders">
+  <thead><tr><th>Player</th><th class="n">Goals</th><th class="n">Assists</th></tr></thead>
+  <tbody>
+  {%- for lr in lrows %}
+    {%- assign lf = lr | split: "|" %}
+    {%- assign lname = lf[1] %}
+    <tr><td>{% include who.html name=lname %}</td><td class="n">{{ lf[2] }}</td><td class="n">{{ lf[3] }}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>
+{%- endif -%}

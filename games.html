@@ -1,0 +1,62 @@
+---
+layout: default
+title: Games & results
+permalink: /games/
+---
+{%- assign all_games = site.games | sort: "date" -%}
+{%- assign rw = 0 -%}{%- assign rd = 0 -%}{%- assign rl = 0 -%}
+{%- assign gf = 0 -%}{%- assign ga = 0 -%}{%- assign played = 0 -%}
+{%- for g in all_games -%}
+  {%- if g.status == "final" -%}
+    {%- include score.html game=g -%}
+    {%- assign played = played | plus: 1 -%}
+    {%- assign gf = gf | plus: s_us -%}
+    {%- assign ga = ga | plus: s_them -%}
+    {%- if s_result == "W" -%}{%- assign rw = rw | plus: 1 -%}
+    {%- elsif s_result == "D" -%}{%- assign rd = rd | plus: 1 -%}
+    {%- else -%}{%- assign rl = rl | plus: 1 -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign live = all_games | where: "status", "live" -%}
+{%- assign upcoming = all_games | where_exp: "g", "g.status != 'final' and g.status != 'live'" -%}
+{%- assign finished = all_games | where: "status", "final" | reverse -%}
+
+<h1>Games &amp; results</h1>
+<div class="tiles">
+  <div class="tile"><b>{{ played }}</b><span>Played</span></div>
+  <div class="tile w"><b>{{ rw }}</b><span>Wins</span></div>
+  <div class="tile"><b>{{ rd }}</b><span>Draws</span></div>
+  <div class="tile l"><b>{{ rl }}</b><span>Losses</span></div>
+  <div class="tile"><b>{{ gf }}–{{ ga }}</b><span>Goals</span></div>
+</div>
+
+{%- if live.size > 0 %}
+<section>
+  <h2>Live now</h2>
+  <div class="grid">{% for g in live %}{% include game-card.html game=g %}{% endfor %}</div>
+</section>
+{%- endif %}
+
+{%- if upcoming.size > 0 %}
+<section>
+  <h2>Upcoming</h2>
+  <div class="grid">{% for g in upcoming %}{% include game-card.html game=g %}{% endfor %}</div>
+</section>
+{%- endif %}
+
+{%- if finished.size > 0 %}
+<section>
+  <h2>Results</h2>
+  <div class="grid">{% for g in finished %}{% include game-card.html game=g %}{% endfor %}</div>
+</section>
+{%- endif %}
+
+{%- if all_games.size == 0 %}
+<p class="note">No games yet. Copy <code>_templates/game-template.md</code> into the <code>_games</code> folder to add one.</p>
+{%- endif %}
+
+<section>
+  <h2>Season leaders</h2>
+  {% include leaders.html %}
+  <p class="sub">Counted from goals and assists logged in each game, for players in <code>_data/roster.yml</code>.</p>
+</section>

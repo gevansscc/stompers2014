@@ -1,0 +1,2 @@
+{%- assign wp = site.data.roster | where: "name", include.name | first -%}{{ include.name }}{% if wp.number %} <span class="num">#{{ wp.number }}</span>{% endif %}
+{%- comment -%} Prints a player's name with their jersey number from _data/roster.yml. Usage: include who.html with name=nm.{%- endcomment -%}

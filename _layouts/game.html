@@ -1,0 +1,112 @@
+---
+layout: default
+---
+{%- include score.html game=page -%}
+{%- assign fm = site.data.formations[page.formation] -%}
+<article class="game">
+  <p class="crumbs"><a href="{{ '/games/' | relative_url }}">← All games</a></p>
+  <h1>{% if page.home == false %}@{% else %}vs{% endif %} {{ page.opponent }}</h1>
+  <div class="sub">
+    {{- page.date | date: "%A, %B %-d, %Y" -}}
+    {%- if page.time %} · {{ page.time }}{% endif -%}
+    {%- if page.location %} · {{ page.location }}{% endif -%}
+    {%- if page.formation %} · Formation {{ page.formation }}{% endif -%}
+  </div>
+
+  <div class="scoreboard {{ s_chip }}">
+    <div class="side"><div class="team">{{ site.team_name }}</div><div class="big">{% if s_has %}{{ s_us }}{% else %}–{% endif %}</div></div>
+    <div class="mid"><span class="chip {{ s_chip }}">{{ s_label }}</span></div>
+    <div class="side"><div class="team">{{ page.opponent }}</div><div class="big">{% if s_has %}{{ s_them }}{% else %}–{% endif %}</div></div>
+  </div>
+  {%- if s_mismatch %}
+  <p class="warn">⚠ The goals listed add up to {{ g_us }}–{{ g_them }}, but final_score says {{ s_us }}–{{ s_them }}. Remove final_score to use the goal list, or fix whichever is wrong.</p>
+  {%- endif %}
+
+  {%- if page.goals.size > 0 %}
+  <section>
+    <h2>Goals</h2>
+    <ol class="goals">
+      {%- assign run_us = 0 -%}
+      {%- assign run_them = 0 -%}
+      {%- for goal in page.goals %}
+        {%- if goal.team == "them" -%}
+          {%- assign run_them = run_them | plus: 1 -%}
+        {%- else -%}
+          {%- assign run_us = run_us | plus: 1 -%}
+        {%- endif %}
+      <li{% if goal.team == "them" %} class="against"{% endif %}>
+        <span class="min">{% if goal.minute %}{{ goal.minute }}'{% endif %}</span>
+        <span class="what">
+          {%- if goal.team == "them" -%}
+            <strong>{{ page.opponent }}</strong>{% if goal.scorer %} — {{ goal.scorer }}{% endif %}
+          {%- else -%}
+            <strong>{% if goal.scorer %}{% include who.html name=goal.scorer %}{% else %}Goal{% endif %}</strong>
+            {%- if goal.assist %} <span class="assist">assist: {% include who.html name=goal.assist %}</span>{% endif -%}
+          {%- endif -%}
+          {%- if goal.note %} <em>({{ goal.note }})</em>{% endif -%}
+        </span>
+        <span class="run">{{ run_us }}–{{ run_them }}</span>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+
+  {%- if fm %}
+  <section>
+    <h2>Lineup</h2>
+    <div class="viewbar seg" role="group" aria-label="Show lineup">
+      <button type="button" data-view="all" aria-pressed="true">All</button>
+      <button type="button" data-view="0" aria-pressed="false">Starters</button>
+      <button type="button" data-view="1" class="s1" aria-pressed="false">1st sub</button>
+      <button type="button" data-view="2" class="s2" aria-pressed="false">2nd sub</button>
+    </div>
+    <div class="lineup-grid">
+      <div>
+        {% include pitch.html game=page %}
+        <p class="sub center">Attacking ↑ &nbsp;·&nbsp; Own goal ↓</p>
+      </div>
+      <div class="panel">
+        <h3>By position</h3>
+        <table>
+          <thead><tr><th>Pos</th><th>Starter</th><th>1st sub</th><th>2nd sub</th></tr></thead>
+          <tbody>
+          {%- for pos in fm %}
+            {%- assign pname = pos[0] %}
+            {%- assign slots = page.lineup[pname] | join: "," | split: "," %}
+            <tr>
+              <td><strong>{{ pname }}</strong></td>
+              {%- for i in (0..2) %}
+              {%- assign nm = slots[i] | strip %}
+              <td>{% if nm != "" %}{% include who.html name=nm %}{% elsif i == 0 %}—{% endif %}</td>
+              {%- endfor %}
+            </tr>
+          {%- endfor %}
+          </tbody>
+        </table>
+        {%- assign bench_list = page.bench | join: "," | split: "," %}
+        {%- if bench_list.size > 0 %}
+        <p class="bench"><strong>Bench:</strong>
+          {%- for b in bench_list %} {% assign bn = b | strip %}{% include who.html name=bn %}{% unless forloop.last %},{% endunless %}{% endfor -%}
+        </p>
+        {%- endif %}
+        {%- for lk in page.lineup %}
+          {%- unless fm[lk[0]] %}
+        <p class="warn">⚠ Lineup has “{{ lk[0] }}”, but formation {{ page.formation }} has no such position.</p>
+          {%- endunless %}
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- else %}
+  <p class="warn">⚠ Formation “{{ page.formation }}” isn't defined in _data/formations.yml.</p>
+  {%- endif %}
+
+  {%- assign trimmed = content | strip %}
+  {%- if trimmed != "" %}
+  <section class="report">
+    <h2>Match report</h2>
+    {{ content }}
+  </section>
+  {%- endif %}
+</article>

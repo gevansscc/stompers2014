@@ -1,0 +1,38 @@
+# Your players. Names here must match how you type them in game files.
+# The jersey number is shown on the pitch and next to scorers/assisters.
+# Season leaders (goals and assists) are counted for players listed here.
+
+- name: Player A
+  number: 1
+- name: Player B
+  number: 2
+- name: Player D
+  number: 3
+- name: Player C
+  number: 4
+- name: Player K
+  number: 5
+- name: Player F
+  number: 6
+- name: Player I
+  number: 7
+- name: Player E
+  number: 8
+- name: Player H
+  number: 9
+- name: Player N
+  number: 10
+- name: Player G
+  number: 11
+- name: Player J
+  number: 12
+- name: Player O
+  number: 13
+- name: Player P
+  number: 14
+- name: Player Q
+  number: 15
+- name: Player L
+  number: 16
+- name: Player M
+  number: 17

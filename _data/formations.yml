@@ -1,0 +1,51 @@
+# Formations for 9v9 (1 goalkeeper + 8 outfield players).
+# Each position is  NAME: {x: 0-100, y: 0-100}
+#   x: 0 = left touchline,  100 = right touchline
+#   y: 0 = the goal you attack (top of the pitch), 100 = your own goal (bottom)
+# List the goalkeeper first, then defence -> attack.
+# A game uses a formation by name:  formation: "3-2-3"
+# Add your own by copying a block and changing the name and numbers.
+
+"3-3-2":
+  GK: {x: 50, y: 90}
+  LB: {x: 20, y: 72}
+  CB: {x: 50, y: 74}
+  RB: {x: 80, y: 72}
+  LM: {x: 20, y: 50}
+  CM: {x: 50, y: 52}
+  RM: {x: 80, y: 50}
+  LF: {x: 35, y: 24}
+  RF: {x: 65, y: 24}
+
+"3-2-3":
+  GK: {x: 50, y: 90}
+  LB: {x: 20, y: 72}
+  CB: {x: 50, y: 74}
+  RB: {x: 80, y: 72}
+  LCM: {x: 35, y: 52}
+  RCM: {x: 65, y: 52}
+  LW: {x: 18, y: 28}
+  ST: {x: 50, y: 22}
+  RW: {x: 82, y: 28}
+
+"2-3-3":
+  GK: {x: 50, y: 90}
+  LCB: {x: 33, y: 72}
+  RCB: {x: 67, y: 72}
+  LM: {x: 20, y: 50}
+  CM: {x: 50, y: 52}
+  RM: {x: 80, y: 50}
+  LW: {x: 18, y: 28}
+  ST: {x: 50, y: 22}
+  RW: {x: 82, y: 28}
+
+"3-4-1":
+  GK: {x: 50, y: 90}
+  LB: {x: 20, y: 72}
+  CB: {x: 50, y: 74}
+  RB: {x: 80, y: 72}
+  LM: {x: 15, y: 50}
+  LCM: {x: 38, y: 52}
+  RCM: {x: 62, y: 52}
+  RM: {x: 85, y: 50}
+  ST: {x: 50, y: 24}

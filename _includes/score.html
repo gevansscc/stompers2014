@@ -1,0 +1,52 @@
+{%- comment -%}
+  Works out the score for a game. Usage: include score.html with game=g (any game).
+  Sets: s_us, s_them, s_has (true once a game is live/final), s_result (W/D/L, final only),
+        s_chip (css class), s_label (text), s_mismatch (final_score disagrees with logged goals),
+        g_us / g_them (goals counted from the goals list).
+  Score = goals logged in the game file, unless final_score: {us, them} is given.
+{%- endcomment -%}
+{%- assign sg = include.game -%}
+{%- assign g_us = 0 -%}
+{%- assign g_them = 0 -%}
+{%- for goal in sg.goals -%}
+  {%- if goal.team == "them" -%}
+    {%- assign g_them = g_them | plus: 1 -%}
+  {%- else -%}
+    {%- assign g_us = g_us | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign s_us = g_us -%}
+{%- assign s_them = g_them -%}
+{%- assign s_override = false -%}
+{%- if sg.final_score -%}
+  {%- assign s_us = sg.final_score.us -%}
+  {%- assign s_them = sg.final_score.them -%}
+  {%- assign s_override = true -%}
+{%- endif -%}
+{%- assign s_has = false -%}
+{%- if sg.status == "final" or sg.status == "live" or s_override -%}
+  {%- assign s_has = true -%}
+{%- endif -%}
+{%- assign s_mismatch = false -%}
+{%- if s_override and sg.goals.size > 0 -%}
+  {%- if g_us != s_us or g_them != s_them -%}
+    {%- assign s_mismatch = true -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign s_result = "" -%}
+{%- assign s_chip = "up" -%}
+{%- assign s_label = "Upcoming" -%}
+{%- if sg.status == "final" -%}
+  {%- if s_us > s_them -%}
+    {%- assign s_result = "W" -%}
+  {%- elsif s_us < s_them -%}
+    {%- assign s_result = "L" -%}
+  {%- else -%}
+    {%- assign s_result = "D" -%}
+  {%- endif -%}
+  {%- assign s_chip = s_result -%}
+  {%- assign s_label = s_result -%}
+{%- elsif sg.status == "live" -%}
+  {%- assign s_chip = "live" -%}
+  {%- assign s_label = "LIVE" -%}
+{%- endif -%}

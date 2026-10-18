@@ -1,0 +1,11 @@
+{%- comment -%} A link card for one game. Usage: include game-card.html with game=g and an optional label. {%- endcomment -%}
+{%- assign cg = include.game -%}
+{%- include score.html game=cg -%}
+<a class="card game-card {{ s_chip }}" href="{{ cg.url | relative_url }}">
+  {%- if include.label %}<div class="kicker">{{ include.label }}</div>{% endif %}
+  <div class="card-title">
+    <span>{% if cg.home == false %}@{% else %}vs{% endif %} {{ cg.opponent }}</span>
+    <span class="score"><span class="chip {{ s_chip }}">{{ s_label }}</span>{% if s_has %} {{ s_us }}–{{ s_them }}{% endif %}</span>
+  </div>
+  <div class="card-desc">{{ cg.date | date: "%a, %b %-d" }}{% if cg.time %} · {{ cg.time }}{% endif %}{% if cg.location %} · {{ cg.location }}{% endif %}</div>
+</a>
