@@ -26,10 +26,10 @@ HOW THIS FILE WORKS
 
 ## Training
 
-- [Passing & receiving drills](https://example.com/passing) — Videos to practise at home
+<!-- - [Passing & receiving drills](https://example.com/passing) — Videos to practise at home
 - [Warm-up routine](https://example.com/warmup) — Do this before every practice
 - [Ball mastery at home](https://example.com/ball-mastery) — 10 minutes a day
-
+ -->
 ## Team Info
 
 <!-- - [Team contacts](https://example.com/contacts) — Coaches and team manager
