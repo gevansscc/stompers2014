@@ -1,7 +1,7 @@
 # U13 Soccer
 
 tagline: Season 2026 · Team hub
-logo: team-logo.png
+logo: "img/logo.png"
 
 <!--
 HOW THIS FILE WORKS
