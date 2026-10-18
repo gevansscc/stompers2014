@@ -18,9 +18,9 @@ HOW THIS FILE WORKS
 ## Lineup
 
 - GK: Holden E #3 | Dante | 
-- LB: Thomas #11 | Dante | 
+- LB: Thomas #11 | Sebastian  | 
 - CB: Marcus #20 | Devon |
-- RB: Devon #23 |Sam| Sebastian
+- RB: Devon #23 |Sam| Dante
 - LCM: Erik L #31 | Omar
 - RCM: Erik K #12 | Zidan | 
 - LW: Mohamed #7 | Anthony
