@@ -1,4 +1,4 @@
-# U13 Soccer
+# 2014 LaSalle Stompers
 
 tagline: Season 2026 · Team hub
 logo: "img/logo.png"
@@ -21,7 +21,7 @@ HOW THIS FILE WORKS
 ## Game Day
 
 - [Lineup & Formations](lineup.html) — Where you'll play and who your subs are
-- [Game schedule](https://example.com/schedule) — Dates, times and field locations
+<!-- - [Game schedule](https://example.com/schedule) — Dates, times and field locations -->
 - Arrive 30 minutes before kickoff with shin guards and water
 
 ## Training
@@ -32,5 +32,5 @@ HOW THIS FILE WORKS
 
 ## Team Info
 
-- [Team contacts](https://example.com/contacts) — Coaches and team manager
-- [Parent & player handbook](https://example.com/handbook) — Expectations and policies
+<!-- - [Team contacts](https://example.com/contacts) — Coaches and team manager
+- [Parent & player handbook](https://example.com/handbook) — Expectations and policies -->
