@@ -3,7 +3,7 @@ date: 2026-10-21
 opponent: Windsor TFC
 home: true
 location: Novoltto
-time: "7:00 PM"
+time: "8:00 PM"
 status: upcoming
 formation: "3-2-3"
 
