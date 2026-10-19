@@ -8,13 +8,13 @@ status: upcoming
 formation: "3-2-3"
 
 lineup:
-  GK: Holden 
-  LB: Thomas 
-  CB: Marcus 
-  RB: Devon 
-  LCM: Erik L 
-  RCM: Erik K 
-  LW: Mohamed 
-  ST: Lucas 
-  RW: Austin
+  GK: Holden, Dante 
+  LB: Thomas, Sebastian 
+  CB: Marcus, Devon
+  RB: Devon, Sam
+  LCM: Erik L, Omar
+  RCM: Erik K, Zidan 
+  LW: Mohamed, Anthony 
+  ST: Lucas, Marcus 
+  RW: Austin, Holden
 ---
