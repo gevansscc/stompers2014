@@ -1,6 +1,6 @@
 ---
 date: 2026-10-25
-opponent: Opponent C
+opponent: Windsor TFC
 home: true
 location: Novoltto
 time: "7:00 PM"
