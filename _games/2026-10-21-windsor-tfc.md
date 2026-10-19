@@ -1,6 +1,6 @@
 ---
 date: 2026-10-21
-opponent: Windsor TFC
+opponent: Windsor TFC (Friendly)
 home: true
 location: Novoltto
 time: "8:00 PM"
