@@ -19,7 +19,7 @@ layout: default
     <div class="side"><div class="team">{{ page.opponent }}</div><div class="big">{% if s_has %}{{ s_them }}{% else %}–{% endif %}</div></div>
   </div>
   {%- if s_mismatch %}
-  <p class="warn">⚠ The goals listed add up to {{ g_us }}–{{ g_them }}, but final_score says {{ s_us }}–{{ s_them }}. Remove final_score to use the goal list, or fix whichever is wrong.</p>
+ <!-- <p class="warn">⚠ The goals listed add up to {{ g_us }}–{{ g_them }}, but final_score says {{ s_us }}–{{ s_them }}. Remove final_score to use the goal list, or fix whichever is wrong.</p> -->
   {%- endif %}
 
   {%- if page.goals.size > 0 %}
@@ -92,7 +92,7 @@ layout: default
         {%- endif %}
         {%- for lk in page.lineup %}
           {%- unless fm[lk[0]] %}
-        <p class="warn">⚠ Lineup has “{{ lk[0] }}”, but formation {{ page.formation }} has no such position.</p>
+      <!--  <p class="warn">⚠ Lineup has “{{ lk[0] }}”, but formation {{ page.formation }} has no such position.</p> -->
           {%- endunless %}
         {%- endfor %}
       </div>
