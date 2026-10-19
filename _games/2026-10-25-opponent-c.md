@@ -8,7 +8,7 @@ status: upcoming
 formation: "3-2-3"
 
 lineup:
-  GK: Holden E (#3)
+  GK: Holden (#3)
   LB: Thomas (#11)
   CB: Marcus (#20)
   RB: Devon (#23)
