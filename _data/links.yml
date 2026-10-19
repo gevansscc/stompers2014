@@ -9,29 +9,29 @@
   items:
     - title: Games & results
       url: /games/
-      desc: Scores, scorers and every lineup
-    - title: Game schedule
-      url: https://example.com/schedule
-      desc: Dates, times and field locations
+      desc: Scores, and lineup
+   # - title: Game schedule
+   #   url: https://example.com/schedule
+   #   desc: Dates, times and field locations
     - note: Arrive 30 minutes before kickoff with shin guards and water
 
 - name: Training
-  items:
-    - title: Passing & receiving drills
-      url: https://example.com/passing
-      desc: Videos to practise at home
-    - title: Warm-up routine
-      url: https://example.com/warmup
-      desc: Do this before every practice
-    - title: Ball mastery at home
-      url: https://example.com/ball-mastery
-      desc: 10 minutes a day
+#  items:
+#    - title: Passing & receiving drills
+#      url: https://example.com/passing
+#      desc: Videos to practise at home
+#    - title: Warm-up routine
+#      url: https://example.com/warmup
+#      desc: Do this before every practice
+#    - title: Ball mastery at home
+#      url: https://example.com/ball-mastery
+#      desc: 10 minutes a day
 
-- name: Team Info
-  items:
-    - title: Team contacts
-      url: https://example.com/contacts
-      desc: Coaches and team manager
-    - title: Parent & player handbook
-      url: https://example.com/handbook
-      desc: Expectations and policies
+# - name: Team Info
+#  items:
+#    - title: Team contacts
+#      url: https://example.com/contacts
+#      desc: Coaches and team manager
+#    - title: Parent & player handbook
+#      url: https://example.com/handbook
+#      desc: Expectations and policies
