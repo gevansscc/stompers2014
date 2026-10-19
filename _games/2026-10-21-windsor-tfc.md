@@ -1,5 +1,5 @@
 ---
-date: 2026-10-25
+date: 2026-10-21
 opponent: Windsor TFC
 home: true
 location: Novoltto
