@@ -22,7 +22,7 @@ HOW THIS FILE WORKS
 
 - [Lineup & Formations](lineup.html) — Where you'll play and who your subs are
 <!-- - [Game schedule](https://example.com/schedule) — Dates, times and field locations -->
-- Arrive 30 minutes before kickoff with shin guards and water
+- Arrive 15-20 minutes before kickoff with shin guards and water
 
 ## Training
 
