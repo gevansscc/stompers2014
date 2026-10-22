@@ -4,7 +4,7 @@ opponent: Windsor TFC (Friendly)
 home: true
 location: Novoltto
 time: "8:00 PM"
-status: upcoming
+status: final
 formation: "3-2-3"
 
 lineup:
