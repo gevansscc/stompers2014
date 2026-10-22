@@ -5,6 +5,7 @@ home: true
 location: Novoltto
 time: "8:00 PM"
 status: final
+final_score: {us: 1, them: 3}
 formation: "3-2-3"
 
 lineup:
