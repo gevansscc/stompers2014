@@ -17,5 +17,5 @@ lineup:
   RCM: Erik K, Zidan 
   LW: Mohamed, Anthony 
   ST: Lucas, Marcus 
-  RW: Austin, Holden
+  RW: Austin, Holden E
 ---
